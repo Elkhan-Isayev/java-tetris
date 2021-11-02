@@ -1,9 +1,9 @@
 # Welcome
-It's programm that will help you relax at work.
+This game will help you relax and have fun.
 
 ## Installation
 1. Download project to your computer
-2. Run Tetis.java
+2. Run Tetris.java
 3. Enjoy :)
 
 ## Can I contribute?
