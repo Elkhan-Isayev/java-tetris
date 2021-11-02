@@ -26,7 +26,6 @@ public class Form {
         this.d = d;
         this.name = name;
 
-        // set color of the stones
         switch (name) {
             case "j":
                 color = Color.SLATEGRAY;
@@ -49,29 +48,24 @@ public class Form {
             case "i":
                 color = Color.SANDYBROWN;
                 break;
-            default:
-                break;
+
         }
-        setColor(color, a);
-        setColor(color, b);
-        setColor(color, c);
-        setColor(color, d);
+        this.a.setFill(color);
+        this.b.setFill(color);
+        this.c.setFill(color);
+        this.d.setFill(color);
     }
 
-    private void setColor(Color color, Rectangle rectangle) {
-        rectangle.setFill(color);
-    }
 
-    // getter
     public String getName() {
         return name;
     }
 
+
     public void changeForm() {
         if (form != 4) {
             form++;
-        }
-        else {
+        } else {
             form = 1;
         }
     }
