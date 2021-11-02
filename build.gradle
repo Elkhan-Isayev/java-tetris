@@ -24,7 +24,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.encom.simpletetris'
-    mainClass = 'com.encom.simpletetris.HelloApplication'
+    mainClass = 'com.encom.simpletetris.Tetris'
 }
 
 javafx {
