@@ -1,25 +1,20 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
-group 'com.encom'
-version '1.0-SNAPSHOT'
+group = 'com.encom'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenCentral()
-}
-
-ext {
-    junitVersion = '5.7.1'
-}
-
-sourceCompatibility = '11'
-targetCompatibility = '11'
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
 }
 
 application {
@@ -28,19 +23,17 @@ application {
 }
 
 javafx {
-    version = '11.0.2'
-    modules = ['javafx.controls', 'javafx.fxml']
+    version = '21.0.5'
+    modules = ['javafx.controls']
 }
 
 dependencies {
-    implementation('org.controlsfx:controlsfx:11.1.0')
-    implementation('com.dlsc.formsfx:formsfx-core:11.3.2') {
-        exclude(group: 'org.openjfx')
-    }
-    implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
 
 test {
